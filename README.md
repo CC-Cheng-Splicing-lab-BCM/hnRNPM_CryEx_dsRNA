@@ -22,6 +22,7 @@ bash SIMPLE_JUNC.sh
 ## Output format
 
 ## IGV and PCR validation
+<img width="530" alt="Screen Shot 2024-01-07 at 12 02 09 AM" src="https://github.com/CC-Cheng-Splicing-lab-BCM/hnRNPM_CryEx_dsRNA/assets/45469780/37273376-d2dd-4d4a-8123-925148928a61">
 
 Part II: visualization analyses
 
