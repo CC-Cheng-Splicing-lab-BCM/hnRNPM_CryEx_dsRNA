@@ -8,21 +8,26 @@ Part I: CryEx
 Example of RNA-seq data on chromosome 21 is available at GitHub HTE1_chr21_sorted.bam, HTE1_chr21_sorted.bam.bai
 
 ## Preparing the reference genome sequences and gene annotation files
-
+### Human reference genome primary assembly (GRCh37)
+### Human transcriptome GENCODE version 24 backmap 37 comprehensive assembly
 ## Run CryEx pipeline step by step
-### Step 1: 
+### Step 1: this step generates a "sub" folder that contains individual subfolder for each expressed exon identified
 bash CryEx_Boundaries.sh
-### Step 2:
+### Step 2: this step generates accurate 5' and 3' splice sites for any expressed exon
+bash CryEx_Coor_Exact.sh
+### Step 3: this step generates number of splice junctions in any expressed exon
 bash CryEx_len.sh
-### Step 3:
+### Step 3: this step generates splice junction information for any expressed exon (requires STAR output file SJ.out.tab)
 bash SJ_STAR.sh
-### Step 4:
+### Step 4: this step calculates PSI values for each expressed exon
 bash SIMPLE_JUNC.sh
-
+### Step 5: this step outputs PSI values for any identified intron including retained intron (requires intron chromosome coordinates file: SS_count.txt)
+bash IR.sh
 ## Output format
-
+### 
 ## IGV and PCR validation
 <img width="530" alt="Screen Shot 2024-01-07 at 12 02 09 AM" src="https://github.com/CC-Cheng-Splicing-lab-BCM/hnRNPM_CryEx_dsRNA/assets/45469780/37273376-d2dd-4d4a-8123-925148928a61">
+<img width="412" alt="Screen Shot 2024-01-07 at 12 16 36 AM" src="https://github.com/CC-Cheng-Splicing-lab-BCM/hnRNPM_CryEx_dsRNA/assets/45469780/beb66a3e-6353-4473-bce5-39a716d1885c">
 
 Part II: visualization analyses
 
