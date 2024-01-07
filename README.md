@@ -5,12 +5,19 @@ This repository contains the novel bioinformatics pipeline named "CryEx" that id
 Part I: CryEx
 
 ## Toy example dataset 
-Example RNA-seq data on chromosome 21 is available at GitHub chr21.bam, chr21.bai
+Example of RNA-seq data on chromosome 21 is available at GitHub HTE1_chr21_sorted.bam, HTE1_chr21_sorted.bam.bai
 
 ## Preparing the reference genome sequences and gene annotation files
 
 ## Run CryEx pipeline step by step
 ### Step 1: 
+bash CryEx_Boundaries.sh
+### Step 2:
+bash CryEx_len.sh
+### Step 3:
+bash SJ_STAR.sh
+### Step 4:
+bash SIMPLE_JUNC.sh
 
 ## Output format
 
