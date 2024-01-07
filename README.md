@@ -34,6 +34,7 @@ bash IR.sh
 [IGV_RT_PCR.pdf](https://github.com/CC-Cheng-Splicing-lab-BCM/hnRNPM_CryEx_dsRNA/files/13852485/IGV_RT_PCR.pdf)
 
 Part II: visualization analyses
+## scripts named with the Figure number matches with the Figures generated in the paper
 
 ### Thank you
 Thank you for using CryEx pipeline and the visualization analyses!
