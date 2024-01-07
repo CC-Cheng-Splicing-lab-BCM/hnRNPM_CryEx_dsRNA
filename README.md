@@ -23,11 +23,15 @@ bash SJ_STAR.sh
 bash SIMPLE_JUNC.sh
 ### Step 5: this step outputs PSI values for any identified intron including retained intron (requires intron chromosome coordinates file: SS_count.txt)
 bash IR.sh
-## Output format
-### 
+## Output format: 
+## (chromosome/exon_start/exon_end/upstream_5'ss/downstream_3'ss/exon_reads/3'ss_spliced_read/5'ss_spliced_reads/skipped_reads/PSI/strandness)
+### middle.PSI: contains any expressed exon that has both 5' and 3' splice sites
+### first.PSI: contains any expressed exon that has 5' splice site only
+### last.PSI: contains any expressed exon that has 3' splice site only
+## (coordinate_ID/left_coordinate/right_coordinate/skipped_reads/intron_reads/intron_length/PSI)
+### (chr21_)intron.PSI: contains any identifiable intron
 ## IGV and PCR validation
-<img width="530" alt="Screen Shot 2024-01-07 at 12 02 09 AM" src="https://github.com/CC-Cheng-Splicing-lab-BCM/hnRNPM_CryEx_dsRNA/assets/45469780/37273376-d2dd-4d4a-8123-925148928a61">
-<img width="412" alt="Screen Shot 2024-01-07 at 12 16 36 AM" src="https://github.com/CC-Cheng-Splicing-lab-BCM/hnRNPM_CryEx_dsRNA/assets/45469780/beb66a3e-6353-4473-bce5-39a716d1885c">
+[IGV_RT_PCR.pdf](https://github.com/CC-Cheng-Splicing-lab-BCM/hnRNPM_CryEx_dsRNA/files/13852485/IGV_RT_PCR.pdf)
 
 Part II: visualization analyses
 
