@@ -2,7 +2,7 @@
 
 This repository contains the novel bioinformatics pipeline named "CryEx" that identifies any expressed exon from RNA-seq and some visualization analyses on the hnRNPM-repressed CryEx study. 
 
-Part I: CryEx
+# Part I: CryEx
 
 ## Toy example dataset 
 Example of RNA-seq data on chromosome 21 is available at GitHub HTE1_chr21_sorted.bam, HTE1_chr21_sorted.bam.bai
@@ -33,7 +33,7 @@ bash IR.sh
 ## IGV and PCR validation
 [IGV_RT_PCR.pdf](https://github.com/CC-Cheng-Splicing-lab-BCM/hnRNPM_CryEx_dsRNA/files/13852485/IGV_RT_PCR.pdf)
 
-Part II: visualization analyses
+# Part II: visualization analyses
 ## scripts named with the Figure number matches with the Figures generated in the paper
 
 ### Thank you
