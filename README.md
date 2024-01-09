@@ -33,8 +33,13 @@ bash IR.sh
 ## IGV and PCR validation
 [IGV_RT_PCR.pdf](https://github.com/CC-Cheng-Splicing-lab-BCM/hnRNPM_CryEx_dsRNA/files/13852485/IGV_RT_PCR.pdf)
 
-# Part II: visualization analyses
-## scripts named with the Figure number matches with the Figures generated in the paper
+# Part II: visualization analyses 
+## (input files required or for test-run are provided)
+## ./Figure4/dsRNA_RNAfold_Z.Rong_dp_ps.sh: This script run RNAfold on a list of targetd sequences in batches and outputs both the secondary structure images and the absolute values of minimum free energe (|MFE|)
+## ./Figure5/Figure5_ISG_heatmap_Z.Rong_2024.R: This script plots interferon stimulated genes (ISGs) fold change heatmap on FPKM normalized gene expression matrix between two conditions
+## ./Figure6/Hallmark_bubble_plot/Figure6_Hallmark_pathway_dotplot_TCGA_Z.Rong.R: This script calculates 50 hallmark pathway scores for each TCGA cancer type and then combine all into one pan-cancer bubble plot describing the hallmark pathway regulation between hnRNPM lowly vs. highly expressed tumors in each cancer
+## ./Figure6/Figure6_ISG_score_Z.Rong_2024.R: This script calculates ISG score for each invididual tumor in TCGA BRCA and plot the boxplot comparison between ISG score distribution between hnRNPM lowly vs. highly expressed samples
+## ./Figure6/Multivariate_Survival_Analysis/General_Multivariate_Survival_Analysis_Z.Rong_2024.R: This is a generalized script using multiple factors (PSIs of TRAPPC10, RBM34, LRP11 and MED15 as well as hnRNPM expression) to calculate risk scores in order to stratify patients by survival outcomes
 
 ### Thank you
 Thank you for using CryEx pipeline and the visualization analyses!
