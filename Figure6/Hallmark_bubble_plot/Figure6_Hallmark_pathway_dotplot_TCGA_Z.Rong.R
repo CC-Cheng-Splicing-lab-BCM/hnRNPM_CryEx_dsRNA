@@ -2,6 +2,7 @@
 ### 1. MsigDB hallmark (hnM low vs. high)
 library(fgsea)
 library(ggplot2)
+# hallmark gmt txt file downloadable through GSEA website
 filename = "~/Downloads/h.all.v7.4.symbols.gmt.txt"
 data = file(filename,open="r")
 
