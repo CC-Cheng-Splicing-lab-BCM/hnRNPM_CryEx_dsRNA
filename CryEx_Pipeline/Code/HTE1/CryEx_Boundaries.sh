@@ -21,10 +21,6 @@ do
 	echo $UP
 	mkdir ./sub/$DIRNAME
 	sed "s/AXX/${FILE}/g" ./CryEx_2023/Code/HTE1/CryEx_Coor_Exact.sh > sub/CryEx.${FILE}.sh
-	#sed -i "s/OXX/${DOWN}/g" sub/CryEx.${FILE}.sh
-	#sed -i "s/UXX/${UP}/g" sub/CryEx.${FILE}.sh
-	#sed -i "s@DXX@/Users/rongzheng/Downloads/CryEx_2023/Code/HTE1/sub/${DIRNAME}@g" sub/CryEx.${FILE}.sh
-	### With macOS, you need:
 	sed -i "" "s/OXX/${DOWN}/g" sub/CryEx.${FILE}.sh
 	sed -i "" "s/UXX/${UP}/g" sub/CryEx.${FILE}.sh
 	sed -i "" "s@DXX@/./CryEx_2023/Code/HTE1/sub/${DIRNAME}@g" sub/CryEx.${FILE}.sh
