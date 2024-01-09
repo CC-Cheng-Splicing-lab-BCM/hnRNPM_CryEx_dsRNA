@@ -57,7 +57,7 @@ do
 	
 	if [[ "$sign" == "+" ]]
 	then 
-		cat /Users/rongzheng/Downloads/CryEx_2023/Code/HTE1/sub/${path}final_junc5SS_HTE_count.txt > SS5_file	
+		cat ./CryEx_2023/Code/HTE1/sub/${path}final_junc5SS_HTE_count.txt > SS5_file	
 		SS3=`echo $path|cut -d'-' -f 2`	
 		while read ss;
 		do 
@@ -93,7 +93,7 @@ do
 				else
 					echo "what?"
 				fi
-				samtools view -b /Users/rongzheng/Downloads/CryEx_2023/HTE1_chr21_sorted.bam "chr21:$SS3-$SS5"> GENE	
+				samtools view -b ./CryEx_2023/HTE1_chr21_sorted.bam "chr21:$SS3-$SS5"> GENE	
 				Ex_count=`echo $(samtools view GENE|awk '(($4*1)>='"$SS3"' && ($4*1)<='"$SS5"')'|awk '($6=="100M")'|wc -l)`
 				add_2=`echo "scale=10; ($DN_count+$Ex_count)/($SS5-$SS3+100)"|bc`
 				tot_2=`echo "scale=10; $add_2+($SK_UP_count/99)"|bc`
@@ -106,7 +106,7 @@ do
 		
 	elif [ "$sign" == "-" ]
 	then
-		cat /Users/rongzheng/Downloads/CryEx_2023/Code/HTE1/sub/${path}final_junc3SS_HTE_count.txt > SS3_file
+		cat ./CryEx_2023/Code/HTE1/sub/${path}final_junc3SS_HTE_count.txt > SS3_file
 		SS5=`echo $path|cut -d'-' -f 3`
 		while read ss;
 		do
@@ -143,7 +143,7 @@ do
 					echo "what?"
 				fi
 		
-				samtools view -b /Users/rongzheng/Downloads/CryEx_2023/HTE1_chr21_sorted.bam "chr21:$SS3-$SS5"> GENE	
+				samtools view -b ./CryEx_2023/HTE1_chr21_sorted.bam "chr21:$SS3-$SS5"> GENE	
 				Ex_count=`echo $(samtools view GENE|awk '(($4*1)>='"$SS3"' && ($4*1)<='"$SS5"')'|awk '($6=="100M")'|wc -l)`
 				add_2=`echo "scale=10; ($UP_count+$Ex_count)/($SS5-$SS3+100)"|bc`
 				tot_2=`echo "scale=10; $add_2+($SK_DN_count/99)"|bc`
@@ -189,7 +189,7 @@ do
 	
 	if [[ "$sign" == "+" ]]
 	then 
-		cat /Users/rongzheng/Downloads/CryEx_2023/Code/HTE1/sub/${path}final_junc3SS_HTE_count.txt > SS3_file
+		cat ./CryEx_2023/Code/HTE1/sub/${path}final_junc3SS_HTE_count.txt > SS3_file
 		SS5=`echo $path|cut -d'-' -f 3`	
 		while read ss;
 		do 
@@ -225,7 +225,7 @@ do
 				else
 					echo "what?"
 				fi
-				samtools view -b /Users/rongzheng/Downloads/CryEx_2023/Code/HTE1/sub/HTE1_chr21_sorted.bam "chr21:$SS3-$SS5"> GENE	
+				samtools view -b ./CryEx_2023/Code/HTE1/sub/HTE1_chr21_sorted.bam "chr21:$SS3-$SS5"> GENE	
 				Ex_count=`echo $(samtools view GENE|awk '(($4*1)>='"$SS3"' && ($4*1)<='"$SS5"')'|awk '($6=="100M")'|wc -l)`
 				add_2=`echo "scale=10; ($UP_count+$Ex_count)/($SS5-$SS3+100)"|bc`
 				tot_2=`echo "scale=10; $add_2+($SK_DN_count/99)"|bc`
@@ -238,7 +238,7 @@ do
 		done < SS3_file
 	elif [ "$sign" == "-" ]
 	then
-		cat /Users/rongzheng/Downloads/CryEx_2023/Code/HTE1/sub/${path}final_junc5SS_HTE_count.txt > SS5_file
+		cat ./CryEx_2023/Code/HTE1/sub/${path}final_junc5SS_HTE_count.txt > SS5_file
 		SS3=`echo $path|cut -d'-' -f 2`
 		while read ss;
 		do
@@ -275,7 +275,7 @@ do
 					echo "what?"
 				fi
 		
-				samtools view -b /Users/rongzheng/Downloads/CryEx_2023/HTE1_chr21_sorted.bam "chr21:$SS3-$SS5"> GENE	
+				samtools view -b ./CryEx_2023/HTE1_chr21_sorted.bam "chr21:$SS3-$SS5"> GENE	
 				Ex_count=`echo $(samtools view GENE|awk '(($4*1)>='"$SS3"' && ($4*1)<='"$SS5"')'|awk '($6=="100M")'|wc -l)`
 				add_2=`echo "scale=10; ($DN_count+$Ex_count)/($SS5-$SS3+100)"|bc`
 				tot_2=`echo "scale=10; $add_2+($SK_UP_count/99)"|bc`
@@ -316,9 +316,9 @@ do
 	if [[ "$sign" == "+" ]]
 	then 
 		
-		min_SS3=`echo $(cat /Users/rongzheng/Downloads/CryEx_2023/Code/HTE1/sub/${path}final_junc3SS_HTE_count.txt|sort -k1,1n|head -1)`
+		min_SS3=`echo $(cat ./CryEx_2023/Code/HTE1/sub/${path}final_junc3SS_HTE_count.txt|sort -k1,1n|head -1)`
 		min_SS3_coord=`echo $min_SS3|awk '{print $1}'`
-		min_SS5=`echo $(cat /Users/rongzheng/Downloads/CryEx_2023/Code/HTE1/sub/${path}final_junc5SS_HTE_count.txt|awk '($1< '"$min_SS3_coord"')')`
+		min_SS5=`echo $(cat ./CryEx_2023/Code/HTE1/sub/${path}final_junc5SS_HTE_count.txt|awk '($1< '"$min_SS3_coord"')')`
 		if [[ ! -z "$min_SS5" ]]
 		then
 			
@@ -345,7 +345,7 @@ do
 				else
 					echo "what?"
 				fi
-				samtools view -b /Users/rongzheng/Downloads/CryEx_2023/HTE1_chr21_sorted.bam "chr21:$SS3-$SS5"> GENE	
+				samtools view -b ./CryEx_2023/HTE1_chr21_sorted.bam "chr21:$SS3-$SS5"> GENE	
 				Ex_count=`echo $(samtools view GENE|awk '(($4*1)>='"$SS3"' && ($4*1)<='"$SS5"')'|awk '($6=="100M")'|wc -l)`
 				add_2=`echo "scale=10; ($UP_count+$Ex_count+$DN_count)/($SS5-$SS3+100)"|bc`
 				tot_2=`echo "scale=10; $add_2+($SK_count/99)"|bc`
@@ -359,9 +359,9 @@ do
 		else
 			echo "what?"
 		fi
-		max_SS5=`echo $(cat /Users/rongzheng/Downloads/CryEx_2023/Code/HTE1/sub/${path}final_junc5SS_HTE_count.txt|sort -k1,1n|tail -1)`
+		max_SS5=`echo $(cat ./CryEx_2023/Code/HTE1/sub/${path}final_junc5SS_HTE_count.txt|sort -k1,1n|tail -1)`
 		max_SS5_coord=`echo $max_SS5|awk '{print $1}'`
-		max_SS3=`echo $(cat /Users/rongzheng/Downloads/CryEx_2023/Code/HTE1/sub/${path}final_junc3SS_HTE_count.txt|awk '($1> '"$max_SS5_coord"')')`
+		max_SS3=`echo $(cat ./CryEx_2023/Code/HTE1/sub/${path}final_junc3SS_HTE_count.txt|awk '($1> '"$max_SS5_coord"')')`
 		if [[ ! -z "$max_SS3" ]]
 		then
 			
@@ -388,7 +388,7 @@ do
 				else
 					echo "what?"
 				fi
-				samtools view -b /Users/rongzheng/Downloads/CryEx_2023/HTE1_chr21_sorted.bam "chr21:$SS3-$SS5"> GENE	
+				samtools view -b ./CryEx_2023/HTE1_chr21_sorted.bam "chr21:$SS3-$SS5"> GENE	
 				Ex_count=`echo $(samtools view GENE|awk '(($4*1)>='"$SS3"' && ($4*1)<='"$SS5"')'|awk '($6=="100M")'|wc -l)`
 				add_2=`echo "scale=10; ($UP_count+$Ex_count+$DN_count)/($SS5-$SS3+100)"|bc`
 				tot_2=`echo "scale=10; $add_2+($SK_count/99)"|bc`
@@ -404,7 +404,7 @@ do
 		fi
 						
 			
-		cat /Users/rongzheng/Downloads/CryEx_2023/Code/HTE1/sub/${path}final_junc3SS_HTE_count.txt > SS3_file
+		cat ./CryEx_2023/Code/HTE1/sub/${path}final_junc3SS_HTE_count.txt > SS3_file
 		
 		
 		while read ss;
@@ -417,8 +417,8 @@ do
 				echo $ll
 				UP_coord=`echo $ll|awk '{print $2}'`
 				UP_count=`echo $ll|awk '{print $4}'`
-				cat /Users/rongzheng/Downloads/CryEx_2023/Code/HTE1/sub/${path}final_junc5SS_HTE_count.txt|awk '($1> '"$SS3"')' > SS5_file
-				sud=`echo $(cat /Users/rongzheng/Downloads/CryEx_2023/Code/HTE1/sub/${path}final_junc5SS_HTE_count.txt|awk '($1> '"$SS3"')')`
+				cat ./CryEx_2023/Code/HTE1/sub/${path}final_junc5SS_HTE_count.txt|awk '($1> '"$SS3"')' > SS5_file
+				sud=`echo $(cat ./CryEx_2023/Code/HTE1/sub/${path}final_junc5SS_HTE_count.txt|awk '($1> '"$SS3"')')`
 				if [[ ! -z "$sud" ]]
 				then
 				
@@ -444,7 +444,7 @@ do
 							else
 								echo "what?"
 							fi
-							samtools view -b /Users/rongzheng/Downloads/CryEx_2023/HTE1_chr21_sorted.bam "chr21:$SS3-$SS5"> GENE	
+							samtools view -b ./CryEx_2023/HTE1_chr21_sorted.bam "chr21:$SS3-$SS5"> GENE	
 							Ex_count=`echo $(samtools view GENE|awk '(($4*1)>='"$SS3"' && ($4*1)<='"$SS5"')'|awk '($6=="100M")'|wc -l)`
 							add_2=`echo "scale=10; ($UP_count+$Ex_count+$DN_count)/($SS5-$SS3+100)"|bc`
 							tot_2=`echo "scale=10; $add_2+($SK_count/99)"|bc`
@@ -469,9 +469,9 @@ do
 	elif [ "$sign" == "-" ]
 	then
 		
-		min_SS3=`echo $(cat /Users/rongzheng/Downloads/CryEx_2023/Code/HTE1/sub/${path}final_junc3SS_HTE_count.txt|sort -k1,1n|head -1)`
+		min_SS3=`echo $(cat ./CryEx_2023/Code/HTE1/sub/${path}final_junc3SS_HTE_count.txt|sort -k1,1n|head -1)`
 		min_SS3_coord=`echo $min_SS3|awk '{print $1}'`
-		min_SS5=`echo $(cat /Users/rongzheng/Downloads/CryEx_2023/Code/HTE1/sub/${path}final_junc5SS_HTE_count.txt|awk '($1<'"$min_SS3_coord"')')`
+		min_SS5=`echo $(cat ./CryEx_2023/Code/HTE1/sub/${path}final_junc5SS_HTE_count.txt|awk '($1<'"$min_SS3_coord"')')`
 		if [[ ! -z "$min_SS5" ]]
 		then
 			
@@ -498,7 +498,7 @@ do
 				else
 					echo "what?"
 				fi
-				samtools view -b /Users/rongzheng/Downloads/CryEx_2023/HTE1_chr21_sorted.bam "chr21:$SS3-$SS5"> GENE	
+				samtools view -b ./CryEx_2023/HTE1_chr21_sorted.bam "chr21:$SS3-$SS5"> GENE	
 				Ex_count=`echo $(samtools view GENE|awk '(($4*1)>='"$SS3"' && ($4*1)<='"$SS5"')'|awk '($6=="100M")'|wc -l)`
 				add_2=`echo "scale=10; ($UP_count+$Ex_count+$DN_count)/($SS5-$SS3+100)"|bc`
 				tot_2=`echo "scale=10; $add_2+($SK_count/99)"|bc`
@@ -512,9 +512,9 @@ do
 		else
 			echo "what?"
 		fi
-		max_SS5=`echo $(cat /Users/rongzheng/Downloads/CryEx_2023/Code/HTE1/sub/${path}final_junc5SS_HTE_count.txt|sort -k1,1n|tail -1)`
+		max_SS5=`echo $(cat ./CryEx_2023/Code/HTE1/sub/${path}final_junc5SS_HTE_count.txt|sort -k1,1n|tail -1)`
 		max_SS5_coord=`echo $max_SS5|awk '{print $1}'`
-		max_SS3=`echo $(cat /Users/rongzheng/Downloads/CryEx_2023/Code/HTE1/sub/${path}final_junc3SS_HTE_count.txt|awk '($1> '"$max_SS5_coord"')')`
+		max_SS3=`echo $(cat ./CryEx_2023/Code/HTE1/sub/${path}final_junc3SS_HTE_count.txt|awk '($1> '"$max_SS5_coord"')')`
 		if [[ ! -z "$max_SS3" ]]
 		then
 			
@@ -541,7 +541,7 @@ do
 				else
 					echo "what?"
 				fi
-				samtools view -b /Users/rongzheng/Downloads/CryEx_2023/HTE1_chr21_sorted.bam "chr21:$SS3-$SS5"> GENE	
+				samtools view -b ./CryEx_2023/HTE1_chr21_sorted.bam "chr21:$SS3-$SS5"> GENE	
 				Ex_count=`echo $(samtools view GENE|awk '(($4*1)>='"$SS3"' && ($4*1)<='"$SS5"')'|awk '($6=="100M")'|wc -l)`
 				add_2=`echo "scale=10; ($UP_count+$Ex_count+$DN_count)/($SS5-$SS3+100)"|bc`
 				tot_2=`echo "scale=10; $add_2+($SK_count/99)"|bc`
@@ -556,7 +556,7 @@ do
 			echo "what?"
 		fi
 				
-		cat /Users/rongzheng/Downloads/CryEx_2023/Code/HTE1/sub/${path}final_junc3SS_HTE_count.txt > SS3_file
+		cat ./CryEx_2023/Code/HTE1/sub/${path}final_junc3SS_HTE_count.txt > SS3_file
 		while read ss;
 		do	
 			echo $ss
@@ -567,8 +567,8 @@ do
 				echo $ll
 				UP_coord=`echo $ll|awk '{print $2}'`
 				UP_count=`echo $ll|awk '{print $4}'`
-				cat /Users/rongzheng/Downloads/CryEx_2023/Code/HTE1/sub/${path}final_junc5SS_HTE_count.txt|awk '($1> '"$SS3"')' > SS5_file
-				sud=`echo $(cat /Users/rongzheng/Downloads/CryEx_2023/Code/HTE1/sub/${path}final_junc5SS_HTE_count.txt|awk '($1> '"$SS3"')')`
+				cat ./CryEx_2023/Code/HTE1/sub/${path}final_junc5SS_HTE_count.txt|awk '($1> '"$SS3"')' > SS5_file
+				sud=`echo $(cat ./CryEx_2023/Code/HTE1/sub/${path}final_junc5SS_HTE_count.txt|awk '($1> '"$SS3"')')`
 				if [[ ! -z "$sud" ]]
 				then
 				
@@ -596,7 +596,7 @@ do
 							else
 								echo "what?"
 							fi
-							samtools view -b /Users/rongzheng/Downloads/CryEx_2023/HTE1_chr21_sorted.bam "chr19:$SS3-$SS5"> GENE	
+							samtools view -b ./CryEx_2023/HTE1_chr21_sorted.bam "chr19:$SS3-$SS5"> GENE	
 							Ex_count=`echo $(samtools view GENE|awk '(($4*1)>='"$SS3"' && ($4*1)<='"$SS5"')'|awk '($6=="100M")'|wc -l)`
 							add_2=`echo "scale=10; ($UP_count+$Ex_count+$DN_count)/($SS5-$SS3+100)"|bc`
 							tot_2=`echo "scale=10; $add_2+($SK_count/99)"|bc`
