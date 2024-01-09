@@ -35,11 +35,11 @@ bash IR.sh
 
 # Part II: visualization analyses 
 ## (input files required or for test-run are provided)
-### ./RNAfold_dsRNA_batches/dsRNA_RNAfold_Z.Rong_dp_ps.sh: This script run RNAfold on a list of targetd sequences in batches and outputs both the secondary structure images and the absolute values of minimum free energe (|MFE|)
-### ./ISG_foldchange_heatmap/ISG_heatmap_Z.Rong_2024.R: This script plots interferon stimulated genes (ISGs) fold change heatmap on FPKM normalized gene expression matrix between two conditions
-### ./Pan-cancer_Analyses/Hallmark_bubble_plot/Hallmark_pathway_dotplot_TCGA_Z.Rong.R: This script calculates 50 hallmark pathway scores for each TCGA cancer type and then combine all into one pan-cancer bubble plot describing the hallmark pathway regulation between hnRNPM lowly vs. highly expressed tumors in each cancer
-### ./Pan-cancer_Analyses/ISG_score/ISG_score_Z.Rong_2024.R: This script calculates ISG score for each invididual tumor in TCGA BRCA and plot the boxplot comparison between ISG score distribution between hnRNPM lowly vs. highly expressed samples
-### ./Pan-cancer_Analyses/Multivariate_Survival_Analysis/General_Multivariate_Survival_Analysis_Z.Rong_2024.R: This is a generalized script using multiple factors (PSIs of TRAPPC10, RBM34, LRP11 and MED15 as well as hnRNPM expression) to calculate risk scores in order to stratify patients by survival outcomes
+### ./RNAfold_dsRNA_batches/dsRNA_RNAfold_Z.Rong_dp_ps.sh: This script runs RNAfold on a list of targetd sequences in batches and outputs both the secondary structure images and the absolute values of minimum free energe (|MFE|).
+### ./ISG_foldchange_heatmap/ISG_heatmap_Z.Rong_2024.R: This script plots interferon stimulated genes (ISGs) fold change heatmap on FPKM normalized gene expression matrix between two conditions.
+### ./Pan-cancer_Analyses/Hallmark_bubble_plot/Hallmark_pathway_dotplot_TCGA_Z.Rong.R: This script calculates 50 hallmark pathway enrichment scores for each TCGA cancer and combines hallmark enrichment scores tables of all TCGA cancers into one pan-cancer bubble plot describing the hallmark pathway regulation enriched in hnRNPM lowly vs. highly expressed tumors in cancers.
+### ./Pan-cancer_Analyses/ISG_score/ISG_score_Z.Rong_2024.R: This script calculates ISG score for each invididual tumor in TCGA DLBC as an example and plots the boxplot comparison of ISG score distribution between hnRNPM lowly vs. highly expressed samples in each cancer.
+### ./Pan-cancer_Analyses/Multivariate_Survival_Analysis/General_Multivariate_Survival_Analysis_Z.Rong_2024.R: This is a generalized script that uses multiple factors (PSIs of TRAPPC10, RBM34, LRP11 and MED15 as well as hnRNPM expression) to build multivariate suvival models and calculates risk scores and then plot survival plots stratified by risk scores in any TCGA cancer.
 
 ### Thank you
 Thank you for using CryEx pipeline and the visualization analyses!
