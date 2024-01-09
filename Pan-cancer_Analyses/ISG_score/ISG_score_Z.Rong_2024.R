@@ -2,14 +2,6 @@
 library("htmltools")
 #BiocManager::install("GSVA")
 library("GSVA")
-# output is empty
-for(i in 1 : length(all_pathway))
-{
-  cat("\r",i)
-  com <- intersect(as.vector(unlist(all_pathway[[i]])), gene)
-  all_pathway[[i]] <- com
-}
-
 
 filename = "~/Downloads/ISG_manual.gmt.txt"
 data = file(filename,open="r")
