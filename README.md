@@ -47,4 +47,6 @@ Thank you for using CryEx pipeline and the visualization analyses!
 ### A python version of the CryEx pipeline that is more user-friendly is underdevelopment, please stay tuned! If you have any questions, please do not hesitate to contact me through GitHub or at my email: Rong.Zheng@bcm.edu
 =======
 This repository contains the novel CryEx pipeline that processes cryptic splicing analysis and visualization analyses on the hnRNPM-repressed CryEx study
->>>>>>> parent of 0f055419 (Update README.md)
+
+# Cite the code: [![DOI](https://zenodo.org/badge/739635097.svg)](https://zenodo.org/doi/10.5281/zenodo.10543477)
+
