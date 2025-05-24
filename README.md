@@ -1,5 +1,7 @@
 # CryEx_hnRNPM
 
+**For the latest version of the CryEx pipeline visit: https://github.com/giovanniquinones/CryEx**
+
 This repository contains the novel bioinformatics pipeline named "CryEx" that identifies any expressed exon from RNA-seq and some visualization analyses on the hnRNPM-repressed CryEx study. 
 
 # Part I: CryEx
